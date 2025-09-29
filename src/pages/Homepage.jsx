@@ -70,7 +70,7 @@ const Homepage = () => {
     const naviga = useNavigate();
 
     useEffect(() => {
-        const filtered = destinations.filter((destination) =>{
+        const filtered = destinations.filter((destination) => {
             return destination.destinazione.toLowerCase().includes(searchDestination.toLowerCase())
         })
 
@@ -88,20 +88,20 @@ const Homepage = () => {
                 <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse"></div>
 
                 <h1 className="text-5xl md:text-6xl font-extrabold text-black mb-8 drop-shadow-[0_5px_10px_rgba(0,0,0,0.5)]">
-                Nomade Viaggi
+                    Nomade Viaggi
                 </h1>
 
                 {/* Barra di ricerca */}
                 <form
-                className="flex w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden border border-white/30"
+                    className="flex w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden border border-white/30"
                 >
                     <div className="d-flex justify-content-around">
                         <input
-                        type="text"
-                        value={searchDestination}
-                        onChange={(e) => setSearchDestination(e.target.value)}
-                        placeholder="Cerca destinazione..."
-                        className="form-control me-1"
+                            type="text"
+                            value={searchDestination}
+                            onChange={(e) => setSearchDestination(e.target.value)}
+                            placeholder="Cerca destinazione..."
+                            className="form-control me-1"
                         />
                     </div>
                 </form>
@@ -109,23 +109,23 @@ const Homepage = () => {
 
             {/* CARD GRID */}
             <main className="homepage">
-                <div className="homepage-container">
+                <div className="container">
                     <h2 className="homepage-title mt-3">Le tue destinazioni</h2>
 
-                    <div className="card-grid">
+                    <div className="row">
                         {filteredDestination.map((dest) => (
-                            <div key={dest.id} className="destination-card" onClick={() => naviga(`/voyage/${dest.id}`)}>
+                            <div key={dest.id} className="col-12 col-md-6 col-lg-4 destination-card" onClick={() => naviga(`/voyage/${dest.id}`)}>
                                 {/* BACKGROUND IMAGE CARD */}
-                                <div 
+                                <div
                                     className="card-bg"
-                                    style={{ backgroundImage: `url(${dest.img})`}}>
+                                    style={{ backgroundImage: `url(${dest.img})` }}>
                                 </div>
                                 {/* OVERLAY CARD */}
                                 <div className="card-overlay"></div>
                                 {/* CONTENUTO CARD CARD */}
                                 <div className="card-content">
-                                {/* TITOLO DESTINAzIONE CARD */}
-                                <h3 className="card-title">{dest.destinazione}</h3>
+                                    {/* TITOLO DESTINAzIONE CARD */}
+                                    <h3 className="card-title">{dest.destinazione}</h3>
                                 </div>
                             </div>
                         ))}
