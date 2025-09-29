@@ -186,8 +186,8 @@ const VoyagePage = () => {
             </div>
           </div>
         </div>
-        <div className="to-home-btn">
-          <div className="square-btn mt-3 justify-content-center">
+        <div className="to-home-btn mt-3">
+          <div className="square-btn text-center">
             <Link to="/"><i className="fas fa-house" /></Link>
           </div>
         </div>
